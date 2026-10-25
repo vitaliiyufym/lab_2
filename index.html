@@ -1,67 +1,117 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме — Юфим Віталій</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме — Юфим Віталій</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    ::selection {
+      background: #0f766e;
+      color: #ffffff;
+    }
+    footer {
+      border-top: 3px double #0f766e;
+    }
+  </style>
+  <!-- defer: скрипт виконається, коли HTML вже розібрано -->
+  <script src="script.js" defer></script>
 </head>
 <body>
-<header>
-    <h1>Юфим Віталій</h1>
-    <p>Веброзробник</p>
-    <address>
-        Email: <a href="mailto:vitalii.yufym.kb.2025@lpnu.ua">vitalii.yufym.kb.2025@lpnu.ua</a><br>
-        Телефон: <a href="tel:+380676496714">+380 67 649 67 24</a><br>
-        Місто: Львів<br>
-        GitHub: <a href="https://github.com/vitaliyufym" target="_blank">github.com/vitaliyufym</a>
+  <header class="site-header">
+    <div class="intro">
+      <h1>Юфим Віталій</h1>
+      <p class="role">Веброзробник</p>
+      <!-- Завдання 4: ручний перемикач теми -->
+      <button type="button" id="theme-toggle" class="theme-toggle">🌙 Темна тема</button>
+    </div>
+    <address class="contacts">
+      <span>Email: <a href="mailto:vitalii.yufym.kb.2025@lpnu.ua">vitalii.yufym.kb.2025@lpnu.ua</a></span>
+      <span>Телефон: <a href="tel:+380676496714">+380 67 649 67 14</a></span>
+      <span>Місто: Львів</span>
+      <span>GitHub: <a href="https://github.com/vitaliyufym" target="_blank">github.com/vitaliyufym</a></span>
     </address>
-</header>
-<main>
+  </header>
 
-    <section>
-        <h2>Про мене</h2>
-        <p>
-            Студент спеціальності "Кібербезпека" у Національному університеті "Львівська політехніка".
-            Цікавлюся веброзробкою, вивчаю HTML, CSS, JavaScript та React.
-            Прагну розвиватися в сферах пов'язаних на пряму з кібербезпекою.
-        <h2>Освіта</h2>
-
-        <article>
-            <h3>Національний університет "Львівська політехніка"</h3>
-            <p>Кібербезпека</p>
-            <p>2025 — дотепер</p>
-        </article>
-        </p>
+  <main>
+    <section id="about">
+      <h2>Про мене</h2>
+      <p>
+        Студент спеціальності "Кібербезпека" у Національному університеті "Львівська політехніка".
+        Цікавлюся веброзробкою, вивчаю HTML, CSS, JavaScript та React.
+        Прагну розвиватися в сферах, пов'язаних напряму з кібербезпекою.
+      </p>
     </section>
-        <section>
-        <h2>Досвід роботи</h2>
 
-        <article>
-            <h3>Веброзробник</h3>
-            <p><em>VseGood</em>, 2024 — 2025</p>
-            <ul>
-                <li>Створення десятків сайтів</li>
-                <li>Неодноразова участь в міжнародних змаганнях</li>
-            </ul>
-        </article>
-
+    <section id="education">
+      <h2>Освіта</h2>
+      <article>
+        <h3>Національний університет "Львівська політехніка"</h3>
+        <p>Кібербезпека</p>
+        <p class="period">2025 — дотепер</p>
+      </article>
     </section>
-        <section>
-        <h2>Навички</h2>
+
+    <section id="experience">
+      <h2>Досвід роботи</h2>
+      <article>
+        <h3>Веброзробник</h3>
+        <p><em>VseGood</em>, <span class="period">2024 — 2025</span></p>
         <ul>
-            <li>HTML5, CSS3</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Git / GitHub</li>
-            <li>Python</li>
+          <li>Створення десятків сайтів</li>
+          <li>Неодноразова участь в міжнародних змаганнях</li>
         </ul>
+      </article>
     </section>
-    </main>
 
-<footer>
-    <p>&copy; 2026 Юфим Віталій. Резюме створено в рамках лабораторної роботи №2.</p>
-</footer>
+    <section id="skills">
+      <h2>Навички</h2>
+      <ul class="skills">
+        <li>HTML5, CSS3</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Git / GitHub</li>
+        <li>Python</li>
+      </ul>
+    </section>
 
-</main>
+    <!-- Завдання 2: сюди JS додасть коментарі з сервера -->
+    <section id="reviews">
+      <h2>Відгуки попередніх роботодавців</h2>
+      <div id="reviews-list" class="reviews-list">Завантаження відгуків…</div>
+    </section>
+  </main>
+
+  <footer>
+    <p style="font-style: italic; text-align: center;">&copy; 2026 Юфим Віталій. Резюме створено в рамках лабораторної роботи №4.</p>
+    <!-- Завдання 1: сюди JS виведе вміст localStorage -->
+    <h2 class="footer-title">Інформація про систему (localStorage)</h2>
+    <dl id="system-info" class="system-info"></dl>
+  </footer>
+
+  <!-- Завдання 3: модальне вікно зворотного зв'язку (з'являється через 1 хвилину) -->
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button type="button" id="modal-close" class="modal-close" aria-label="Закрити">×</button>
+      <h2 id="modal-title">Зворотний зв'язок</h2>
+
+      <form id="contact-form" action="https://formspree.io/f/xeaedwjk" method="POST">
+        <label for="f-name">Ім'я</label>
+        <input type="text" id="f-name" name="name" required>
+
+        <label for="f-email">Email</label>
+        <input type="email" id="f-email" name="email" required>
+
+        <label for="f-phone">Номер телефону</label>
+        <input type="tel" id="f-phone" name="phone" placeholder="+380 XX XXX XX XX" required>
+
+        <label for="f-message">Повідомлення</label>
+        <textarea id="f-message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn-submit">Надіслати</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
